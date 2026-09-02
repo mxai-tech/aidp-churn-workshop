@@ -1,7 +1,9 @@
 ---
 title: Workshop AIDP · Churn de clientes
-thumbnail: /assets/img/thumbnail/nightgardenflower.jpg
-tags: [AIDP, OCI, datos, churn]
+section: Inicio
+lead: De datos transaccionales sintéticos a decisiones de retención con OCI AI Data Platform.
+icon: ↗
+vignette: De MySQL a señales de churn
 ---
 
 ## De datos transaccionales a decisiones de retención
@@ -21,7 +23,7 @@ analizar y usar datos** dentro de un tenant de OCI.
    Medallion.
 2. **Preparación:** crear el workspace y compute cluster; instalar las
    librerías necesarias.
-3. **Laboratorio:** ingesta MySQL, capas Bronze/Silver/Gold, analítica y ML de
+3. **Laboratorios:** ingesta MySQL, capas Bronze/Silver/Gold, analítica y ML de
    churn.
 4. **Recursos:** notebook público sanitizado, material de apoyo y solución de
    problemas.

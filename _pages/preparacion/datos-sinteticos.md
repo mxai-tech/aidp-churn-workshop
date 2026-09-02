@@ -1,7 +1,9 @@
 ---
 title: Conocer los datos sintéticos
-thumbnail: /assets/img/thumbnail/empty.jpg
-tags: [datos sintéticos, MySQL, churn]
+section: Preparación
+lead: La fuente del taller representa una operación de servicios y fue creada para practicar problemas reales de calidad y churn.
+icon: ◌
+vignette: Fuente transaccional de práctica
 ---
 
 ## Propósito del conjunto de datos

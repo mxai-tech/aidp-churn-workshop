@@ -1,7 +1,9 @@
 ---
 title: Notebook, descargas y publicación segura
-thumbnail: /assets/img/thumbnail/empty.jpg
-tags: [notebook, seguridad, descargas]
+section: Recursos
+lead: Accede a los archivos del taller y aplica prácticas básicas para proteger la configuración del entorno.
+icon: □
+vignette: Materiales públicos y seguros
 ---
 
 ## Notebook del workshop

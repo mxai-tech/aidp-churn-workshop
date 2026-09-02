@@ -1,7 +1,9 @@
 ---
 title: Notebooks, Spark y cómputo distribuido
-thumbnail: /assets/img/thumbnail/sample.png
-tags: [notebooks, Spark, PySpark]
+section: Fundamentos
+lead: Cómo un notebook se conecta con un clúster para transformar datos a escala.
+icon: ✦
+vignette: Código coordinado, ejecución distribuida
 ---
 
 ## Notebooks como artefacto de trabajo

@@ -1,38 +1,18 @@
 title: Workshop AIDP · Churn de clientes
 description: "Laboratorio práctico de ingeniería de datos, analítica y machine learning con OCI AI Data Platform."
 url: "https://mxai-tech.github.io"
-logo_img: "/assets/img/favicon.webp"
-profile_img: "/assets/img/favicon.webp"
+baseurl: "/aidp-churn-workshop"
+lang: es-MX
 
-# Social Links
-email:
-github_username: mxai-tech
-twitter_username:
-instagram_username:
-linkedin_username:
-facebook_username:
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
 
-# External API
-giscus_repo:
-giscus_repoId:
-giscus_category:
-giscus_categoryId:
-goatcounter_code:
-google_analytics:
-
-# If your repo name follows the format "<user-name>.github.io", then leave the below blank.
-# Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
-baseurl: /aidp-churn-workshop
-
-# Build settings
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-loading-lazy
-
-exclude:
-  - docs/
 
 collections:
   pages:
@@ -40,15 +20,12 @@ collections:
     permalink: /:path.html
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
-      layout: "page"
-      date: "1900-01-01"
+      layout: page
 
-# Markdown newline activator 
-kramdown:
-  input: GFM
-  hard_wrap: true
+exclude:
+  - docs/
+  - vendor/

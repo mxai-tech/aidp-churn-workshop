@@ -1,7 +1,9 @@
 ---
 title: Laboratorio 1 · Ingesta MySQL y Bronze
-thumbnail: /assets/img/thumbnail/empty.jpg
-tags: [JDBC, MySQL, Bronze, Spark]
+section: Laboratorios
+lead: Conecta Spark a la fuente MySQL y crea una copia trazable de los datos transaccionales.
+icon: ⌁
+vignette: Fuente a Bronze, sin transformar
 ---
 
 ## Objetivo

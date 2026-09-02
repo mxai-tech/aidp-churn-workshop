@@ -1,25 +1,24 @@
 # Workshop AIDP · Churn de clientes
 
 Sitio público del workshop de ingeniería de datos, analítica y machine learning
-con OCI AI Data Platform. Está construido con
-[Jekyll-theme-Satellite](https://github.com/byanko55/jekyll-theme-satellite),
-distribuido bajo licencia MIT.
+con OCI AI Data Platform. El sitio usa una plantilla Jekyll propia, creada para
+este workshop; no depende de un tema de terceros.
 
 ## Contenido
 
-- Fundamentos: OCI, AIDP, notebooks, Spark, clusters y Medallion.
-- Preparación del workspace y compute cluster.
-- Instalación de MySQL Connector/J y `requirements.txt`.
-- Datos sintéticos, ingesta MySQL, Bronze/Silver/Gold y churn ML.
-- Recursos, notebook de plantilla y troubleshooting.
+- **Fundamentos:** OCI, AIDP, notebooks, Spark, clústeres y Medallion.
+- **Preparación:** datos sintéticos, workspace, compute cluster, JDBC y
+  `requirements.txt`.
+- **Laboratorios:** ingesta MySQL, Bronze, Silver, Gold y modelo de churn.
+- **Recursos:** notebook de plantilla, descargas y solución de problemas.
 
-La base MySQL es una fuente preconfigurada y de sólo lectura para los
-participantes. Este repositorio no contiene scripts para crearla ni datos de
-conexión.
+La base MySQL ya está preconfigurada para los participantes y se consume como
+una fuente de sólo lectura. Este repositorio no contiene scripts para crearla ni
+datos de conexión.
 
 ## Desarrollo local
 
-Requiere Ruby y Bundler:
+Requiere Ruby 3.3 o superior y Bundler:
 
 ```bash
 bundle install
@@ -36,9 +35,12 @@ Abre `http://localhost:4000/aidp-churn-workshop/`.
 4. El workflow `.github/workflows/deploy-pages.yml` construirá y desplegará el
    sitio en `https://mxai-tech.github.io/aidp-churn-workshop/`.
 
-## Seguridad de notebooks
+## Seguridad y marca
 
 El notebook incluido es una plantilla sin secretos. Antes de publicar una copia
 del notebook completo, sustituye contraseñas, tokens, hosts privados e
 identificadores de tenancy por variables de entorno o instrucciones para los
 participantes. GitHub Pages es público.
+
+Oracle y Java son marcas registradas de Oracle y/o sus afiliadas. Los recursos
+de marca incluidos se usan únicamente para este material de workshop.

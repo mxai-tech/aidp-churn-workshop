@@ -1,7 +1,9 @@
 ---
 title: Crear workspace, cluster y librerías
-thumbnail: /assets/img/thumbnail/empty.jpg
-tags: [AIDP, workspace, compute, JDBC]
+section: Preparación
+lead: Configura el entorno de AIDP y las dependencias que permitirán ejecutar la práctica con Spark.
+icon: ◌
+vignette: Workspace, compute y conectores
 ---
 
 ## 1. Crear el workspace en AIDP Workbench

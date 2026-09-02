@@ -1,7 +1,9 @@
 ---
 title: OCI y AI Data Platform
-thumbnail: /assets/img/thumbnail/bricks.webp
-tags: [OCI, AIDP, plataforma]
+section: Fundamentos
+lead: Los servicios que forman el entorno de trabajo del taller y la función que cumple cada uno.
+icon: ✦
+vignette: Entorno administrado para datos
 ---
 
 ## Qué es OCI

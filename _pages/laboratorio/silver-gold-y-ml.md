@@ -1,7 +1,9 @@
 ---
 title: Laboratorio 2 · Silver, Gold y modelo de churn
-thumbnail: /assets/img/thumbnail/empty.jpg
-tags: [Silver, Gold, ML, churn]
+section: Laboratorios
+lead: Convierte datos heredados en métricas confiables y un score accionable de riesgo de abandono.
+icon: ⌁
+vignette: Reglas de calidad y predicción
 ---
 
 ## Capa Silver: corregir sin ocultar la fuente

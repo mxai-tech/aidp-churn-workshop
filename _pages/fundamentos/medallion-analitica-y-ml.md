@@ -1,7 +1,9 @@
 ---
 title: Medallion, analítica y machine learning
-thumbnail: /assets/img/thumbnail/book.jpg
-tags: [Medallion, analítica, ML, churn]
+section: Fundamentos
+lead: Una arquitectura de datos que hace trazable el paso de la fuente al modelo de churn.
+icon: ✦
+vignette: Calidad progresiva y decisiones
 ---
 
 ## Arquitectura Medallion
