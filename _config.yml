@@ -29,3 +29,16 @@ defaults:
 exclude:
   - docs/
   - vendor/
+  - LICENSE
+  - README.md
+  - jekyll-theme-satellite.gemspec
+  - assets/css/style.scss
+  - assets/css/404.scss
+  - assets/css/highlight.min.css
+  - assets/js/404.js
+  - assets/js/background.js
+  - assets/js/common.js
+  - assets/js/fontfaceobserver.js
+  - assets/js/highlight.min.js
+  - assets/js/post.js
+  - assets/js/subject.js
