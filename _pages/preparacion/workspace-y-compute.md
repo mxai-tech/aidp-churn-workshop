@@ -9,10 +9,14 @@ vignette: Workspace, compute y conectores
 ## 1. Crear el workspace en AIDP Workbench
 
 1. Accede a OCI con el usuario y compartimiento proporcionados para el taller.
-2. Abre **AI Data Platform** y entra a **Workbench**.
-3. Crea un workspace en el compartimiento asignado.
-4. Usa un nombre identificable, por ejemplo `churn-<iniciales>`.
-5. Espera a que el workspace esté disponible y ábrelo.
+2. Abre **AI Data Platform** (dentro de la sección Analítica y AI del menú de hamburguesa).
+3. Crea un Workbench. Asegurate de seleccionar el compartimiento correcto.
+![Pantalla para crear un workbench en OCI]({{ '/assets/img/create_workbench.png' | relative_url }})
+4. Asigna un nombre al **workbench** y al **workspace**. Usa un nombre identificable, por ejemplo `churn-<iniciales>`.
+5. En el apartado de **Oracle Autonomous AI Lakehouse Configuration** selecciona crear una nueva y asigna una contraseña para el administrador.
+6. **Storage encryption** dejalo con el valor por defecto.
+7. Para **Add policies selecciona la opción **Advanced**
+8. Haz click en **Create**. Espera a que el workbench esté disponible y ábrelo.
 
 El workspace delimita tus notebooks, archivos y recursos de trabajo. Trabaja
 siempre dentro del compartimiento indicado por el instructor.
@@ -20,7 +24,7 @@ siempre dentro del compartimiento indicado por el instructor.
 ## 2. Crear un compute cluster
 
 1. En el workspace, abre **Compute** y selecciona **Create cluster**.
-2. Elige la configuración de Spark y tamaño indicados por el instructor.
+2. Elige la configuración de Spark y tamaño indicados por el instructor. Asegurate de que la la opción Autoscale esté inactiva.
 3. Asigna un nombre como `churn-compute-<iniciales>`.
 4. Crea el clúster y espera al estado **Active** antes de adjuntar el notebook.
 
@@ -35,6 +39,10 @@ Las bibliotecas se instalan a nivel de clúster, por lo que estarán disponibles
 para los notebooks y jobs que lo usen. Reinicia el clúster después de instalar.
 
 ### MySQL Connector/J
+
+El connector JDBC de MySQL puedes ser obtener en: `https://downloads.mysql.com/archives/c-j/`
+Selecciona la versión **8.0.33** y como plataforma **Platform Independent**, descarga el JAR.
+![Pantalla de descarga de Connector/J]({{ '/assets/img/download-jar.png' | relative_url }})
 
 Sube el JAR de MySQL Connector/J 8.x y agrégalo como librería. El notebook usa:
 
