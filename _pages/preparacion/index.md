@@ -8,7 +8,7 @@ vignette: Entorno preparado, datos listos
 
 ## Preparar el laboratorio
 
-La base MySQL está disponible antes del workshop y se usa como una fuente de
+La base de datos MySQL está disponible antes del workshop y se usa como una fuente de
 sólo lectura. En esta etapa se revisan sus patrones sintéticos y se configura
 el entorno de AIDP que consumirá los datos.
 

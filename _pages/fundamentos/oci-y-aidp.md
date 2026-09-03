@@ -9,7 +9,8 @@ vignette: Entorno administrado para datos
 ## Qué es OCI
 
 Oracle Cloud Infrastructure (OCI) es la plataforma de nube de Oracle. Ofrece
-servicios de cómputo, red, almacenamiento, identidad, bases de datos y datos.
+servicios de cómputo, red, almacenamiento, identidad, bases de datos, flujos 
+de datos y por supuesto, IA y Machine Learning.
 En este workshop, OCI es el entorno donde cada participante crea un espacio de
 trabajo y procesa información sin administrar servidores individuales.
 

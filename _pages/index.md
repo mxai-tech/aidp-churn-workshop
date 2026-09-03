@@ -13,9 +13,9 @@ uso completo de churn de clientes: desde datos transaccionales sintéticos en
 MySQL hasta analítica, ingeniería de características y un modelo de riesgo en
 OCI AI Data Platform (AIDP).
 
-La base de datos ya estará preparada para el laboratorio. El objetivo no es
-administrar MySQL, sino aprender a **conectar, ingerir, depurar, transformar,
-analizar y usar datos** dentro de un tenant de OCI.
+La base de datos ya está preparada para el laboratorio y no es necesario administrarla. 
+El objetivo es aprender a **conectar, ingerir, depurar, transformar, analizar y usar 
+datos** dentro de un tenant de OCI.
 
 ### Ruta del taller
 
@@ -28,9 +28,7 @@ analizar y usar datos** dentro de un tenant de OCI.
 4. **Recursos:** notebook público sanitizado, material de apoyo y solución de
    problemas.
 
-> No publiques contraseñas, cadenas de conexión privadas ni salidas que
-> contengan datos sensibles en un notebook o repositorio de GitHub Pages.
 
-Comienza por [Fundamentos]({{ '/fundamentos/' | relative_url }}) y continúa en
-[Preparación]({{ '/preparacion/' | relative_url }}).
+Comienza por [Fundamentos]({{ '/fundamentos/' | relative_url }}) 
+y continúa en [Preparación]({{ '/preparacion/' | relative_url }}).
 ---

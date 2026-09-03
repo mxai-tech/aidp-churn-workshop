@@ -6,7 +6,7 @@ icon: ✦
 vignette: Calidad progresiva y decisiones
 ---
 
-## Arquitectura Medallion
+## Arquitectura Medallion (en el contexto del taller)
 
 La arquitectura Medallion organiza los datos por propósito y calidad:
 

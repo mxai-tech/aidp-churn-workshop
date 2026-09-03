@@ -27,10 +27,10 @@ legado y eventos suficientes para practicar analítica y ML.
 - **billing_payments:** cobros mensuales, vencimiento, importe, método y fecha
   de registro del pago.
 
-## Patrones intencionales
+## Patrones descubribles
 
-- Algunos pagos se registran después de `due_at`; en Bronze siguen como `PAID`.
-  Silver debe derivar el estado `OVERDUE` con las fechas.
+- Algunos pagos se registran después de `due_at` (fecha de vencimiento); en 
+  Bronze siguen como `PAID`. Silver debe derivar el estado `OVERDUE` con las fechas.
 - El sistema legado no escribe el sentido de los cambios de producto de manera
   confiable. Silver determina `UPGRADE` y `DOWNGRADE` comparando niveles.
 - Las cancelaciones se concentran en clientes con pagos tardíos. Esto genera una
