@@ -23,7 +23,7 @@ Al terminar tendrás tres tablas Gold:
 
 ### Antes de empezar
 
-1. Confirma que el [Laboratorio 1]({{ '/laboratorio/ingesta-y-bronze.html' | relative_url }})
+1. Confirma que el [Laboratorio 1]({{ '/laboratorio/intesta-bronze-silver.html' | relative_url }})
    terminó sin errores.
 2. Verifica que existan y tengan datos `customers_silver`,
    `acquired_products_silver` y `billing_payments_silver`.

@@ -15,9 +15,9 @@ dividen por perfil, pero se ejecutan de manera secuencial.
 
 ### Laboratorios
 
-1. [Laboratorio 1 · Ingesta, Bronze y Silver]({{ '/laboratorio/ingesta-y-bronze.html' | relative_url }})
+1. [Laboratorio 1 · Ingesta, Bronze y Silver]({{ '/laboratorio/intesta-bronze-silver.html' | relative_url }})
    — orientado a ingeniería de datos: extracción, trazabilidad, calidad y
    consistencia de los datos.
-2. [Laboratorio 2 · Gold y modelo de churn]({{ '/laboratorio/silver-gold-y-ml.html' | relative_url }})
+2. [Laboratorio 2 · Gold y modelo de churn]({{ '/laboratorio/gold-y-ml.html' | relative_url }})
    — orientado a ciencia de datos: métricas, snapshots históricos,
    entrenamiento, scoring e impacto económico.

@@ -277,4 +277,4 @@ GROUP BY updated_billing_status;
 
 Debes poder explicar de dónde proviene cada campo corregido y volver a Bronze
 para comprobarlo. Con esto termina la parte de ingeniería de datos; continúa
-con el [Laboratorio 2]({{ '/laboratorio/silver-gold-y-ml.html' | relative_url }}).
+con el [Laboratorio 2]({{ '/laboratorio/gold-y-ml.html' | relative_url }}).
