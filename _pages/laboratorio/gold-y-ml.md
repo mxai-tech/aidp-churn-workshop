@@ -32,8 +32,7 @@ Al terminar tendrás tres tablas Gold:
 4. No cambies las reglas Silver durante este laboratorio: Gold consume esos
    datos como un contrato de entrada.
 
-> **Captura sugerida 1:** consulta o explorador de tablas que muestre las tres
-> tablas Silver y sus conteos antes de iniciar Gold.
+![Status of silver from lab1]({{ '/assets/img/silver_lab1.png' | relative_url }})
 
 ## 1. Validar la base de datos analítica
 
@@ -63,9 +62,6 @@ No entrenes todavía: en este momento las tablas son contratos vacíos. En los
 siguientes pasos se llenarán en este orden: Customer 360, snapshots históricos
 y scoring.
 
-> **Captura sugerida 2:** las tres tablas Gold creadas en el catálogo, antes de
-> que se carguen los resultados.
-
 ## 3. Construir Customer 360 y métricas de riesgo
 
 Ejecuta la celda **Customer 360: métricas actuales de producto y pagos**. Es la
@@ -89,9 +85,8 @@ El resultado se escribe en modo `overwrite` en
 `churn_analysis.gold.acquired_products_analytics_gold`. Revisa las diez filas
 de muestra y confirma que `as_of_date` corresponde a la fecha de ejecución.
 
-> **Captura sugerida 3:** resultado de Customer 360 con las columnas
-> `overdue_ratio_90d`, `upgrades_lifetime`, `downgrades_lifetime` y
-> `current_contracted_price` visibles.
+![customer 360]({{ '/assets/img/customer_360.png' | relative_url }})
+![payment health]({{ '/assets/img/payment_health.png' | relative_url }})
 
 ## 4. Explorar salud de clientes y comportamiento por tier
 
@@ -108,8 +103,7 @@ Compara el atraso promedio de cada familia/tier de producto contra el promedio
 histórico de upgrades y downgrades. Interpreta los resultados como señales de
 priorización, no como evidencia de causalidad.
 
-> **Captura sugerida 4:** ambas gráficas de salud de pagos y riesgo por tier.
-> Conviene capturarlas con los títulos, ejes y leyendas completos.
+![tier risk]({{ '/assets/img/tier_risk.png' | relative_url }})
 
 ## 5. Crear snapshots históricos para entrenamiento
 
@@ -137,8 +131,7 @@ Al finalizar, examina el conteo que agrupa por `label_churn_30d` e
 entrenar. Si sólo existen ceros, revisa las cancelaciones Silver y el histórico
 de pagos, en lugar de alterar manualmente la etiqueta.
 
-> **Captura sugerida 5:** tabla de conteos por `label_churn_30d` e
-> `is_label_mature`; será la evidencia visual de que el conjunto permite ML.
+![label churn 30d]({{ '/assets/img/label_churn_30d.png' | relative_url }})
 
 ## 6. Entrenar y evaluar el modelo de churn
 
@@ -161,9 +154,7 @@ informa por qué omite el entrenamiento: menos de dos fechas maduras, falta de
 periodo de prueba o ausencia de churn/no churn en entrenamiento. Esta salida es
 una señal de calidad de datos, no un error que deba ocultarse.
 
-> **Captura sugerida 6:** métricas del entrenamiento temporal y muestra de
-> predicciones, o el mensaje de validación si el histórico todavía no es
-> suficiente.
+![train metrics]({{ '/assets/img/train_metrics.png' | relative_url }})
 
 ## 7. Generar scoring y segmentos de riesgo
 
@@ -193,6 +184,8 @@ spark.table("churn_analysis.gold.churn_predictions_gold") \
     .show(truncate=False)
 ```
 
+![risk scoring]({{ '/assets/img/scoring.png' | relative_url }})
+
 ## 8. Comunicar el riesgo y el impacto económico
 
 Por último, ejecuta la celda **Clientes de mayor riesgo e impacto financiero
@@ -209,8 +202,7 @@ probabilidad de churn. Este importe sirve para ordenar acciones de retención;
 no representa una proyección financiera definitiva ni sustituye una decisión
 comercial.
 
-> **Captura sugerida 7:** gráfica final de clientes de alto riesgo e ingreso
-> mensual esperado en riesgo. Será una buena imagen de cierre para el taller.
+![customer risk]({{ '/assets/img/customer_risk.png' | relative_url }})
 
 ## Cierre del laboratorio
 
