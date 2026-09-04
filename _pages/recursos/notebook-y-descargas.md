@@ -8,15 +8,14 @@ vignette: Materiales públicos y seguros
 
 ## Notebook del workshop
 
-El notebook completo se entrega a los participantes por el canal definido por
-el instructor. La copia destinada a GitHub Pages debe ser una versión pública y
+El notebook completo lo puedes descargar en este página. La copia es una versión pública y
 sanitizada: sin contraseñas, tokens, hosts privados, identificadores de tenancy
 ni resultados que expongan información sensible.
 
-El [notebook de plantilla]({{ '/notebooks/aidp_churn_workshop_template.ipynb' | relative_url }})
-muestra la forma segura de tomar valores de configuración desde variables de
-entorno. Cópialo antes de importar el notebook completo y adapta las celdas de
-conexión a los controles de tu organización.
+El [notebook de plantilla]({{ '/notebooks/aidp_churn_workshop.ipynb' | relative_url }})
+contiene todo el código necesario para los laboratorios, desde la asignación de variables 
+de entorno hasta la ejecución del modelo de ML. 
+Deberás adaptar las celdas de conexión a los controles de tu organización.
 
 También puedes descargar el [requirements.txt]({{ '/downloads/requirements.txt' | relative_url }})
 para instalar las dependencias Python del cluster.
@@ -25,7 +24,7 @@ para instalar las dependencias Python del cluster.
 
 Los scripts de datos sintéticos, esquema MySQL y notebook de desarrollo se
 mantienen en el repositorio técnico del workshop. Este sitio es la guía pública
-del participante y no debe incluir secretos ni infraestructura operativa.
+del participante y no incluye secretos ni infraestructura operativa.
 
 ## Solución de problemas frecuente
 
