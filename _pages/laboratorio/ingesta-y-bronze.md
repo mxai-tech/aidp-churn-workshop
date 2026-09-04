@@ -14,24 +14,83 @@ Bronze y sus versiones validadas en Silver. La siguiente parte del workshop
 parte exclusivamente de estas tablas.
 
 El notebook usa Spark con JDBC para realizar la lectura distribuida de MySQL.
-La importación de `mysql.connector` que aparece al inicio queda disponible para
-comprobaciones auxiliares, pero la ingesta principal se ejecuta con
-`spark.read.format("jdbc")` y requiere el JAR de MySQL Connector/J en el
-cluster.
+La ingesta principal se ejecuta con `spark.read.format("jdbc")` y requiere el 
+JAR de MySQL Connector/J en el cluster.
 
 ### Antes de empezar
 
-1. Abre el workspace y adjunta el notebook al compute cluster activo.
+1. Abre el workspace y adjunta el notebook.
+![Importar notebook al workbench en OCI]({{ '/assets/img/import_notebook1.png' | relative_url }})
+![Subir notebook al workbench en OCI]({{ '/assets/img/import_notebook2.png' | relative_url }})
 2. Confirma que MySQL Connector/J y el archivo `requirements.txt` se instalaron
    como librerías del cluster.
 3. Obtén las credenciales de MySQL y los datos de Object Storage por el canal
-   indicado por el instructor. No los copies a GitHub, al notebook público ni a
-   una celda Markdown.
+   indicado por el instructor.
 4. Revisa que exista acceso de red del cluster tanto a MySQL como al bucket de
    Object Storage.
 
-> **Captura sugerida 1:** workspace abierto, notebook adjunto y compute cluster
-> en estado **Active**. Aquí se podrá insertar una imagen del Workbench.
+Como comprobación previa, puedes ejecutar si gustas esta celda **después de la 
+celda de Declaración de Variables** del notebook y antes de comenzar la extracción. 
+Comprueba el puerto y una consulta mínima a MySQL, y lista los metadatos de la 
+raíz del bucket con el mismo conector que Spark utilizará para la ingesta.
+
+```python
+import socket
+import mysql.connector
+
+
+def validar_conectividad_mysql():
+    try:
+        with socket.create_connection(
+            (MYSQL_CONFIG["host"], MYSQL_CONFIG["port"]), timeout=10
+        ):
+            pass
+        print("✓ Red hacia MySQL: puerto accesible.")
+    except OSError as error:
+        raise RuntimeError(
+            "No hay conectividad de red hacia MySQL. Revisa el host, puerto, "
+            "NSG/reglas de seguridad y la ruta de red del cluster."
+        ) from error
+
+    try:
+        connection = mysql.connector.connect(
+            **MYSQL_CONFIG,
+            connection_timeout=10,
+        )
+        cursor = connection.cursor()
+        cursor.execute("SELECT 1")
+        cursor.fetchone()
+        cursor.close()
+        connection.close()
+        print("✓ MySQL: autenticación y consulta de prueba correctas.")
+    except mysql.connector.Error as error:
+        raise RuntimeError(
+            "El puerto de MySQL responde, pero no fue posible autenticar o "
+            "ejecutar la consulta de prueba. Revisa las credenciales y permisos."
+        ) from error
+
+
+def validar_acceso_object_storage():
+    try:
+        bucket_uri = f"oci://{BUCKET_NAME}@{NAMESPACE}/"
+        path = spark._jvm.org.apache.hadoop.fs.Path(bucket_uri)
+        filesystem = path.getFileSystem(spark._jsc.hadoopConfiguration())
+        filesystem.listStatus(path)
+        print("✓ Object Storage: bucket accesible desde el cluster.")
+    except Exception as error:
+        raise RuntimeError(
+            "No fue posible acceder al bucket de Object Storage. Revisa el "
+            "nombre del bucket, namespace, políticas IAM y configuración de red."
+        ) from error
+
+
+validar_conectividad_mysql()
+validar_acceso_object_storage()
+
+print("Conectividad validada. Puedes iniciar la ingesta.")
+```
+
+![Notebook listo]({{ '/assets/img/notebook_ready.png' | relative_url }})
 
 ## 1. Inicializar el notebook y la configuración
 
@@ -54,8 +113,6 @@ usa `parquet` salvo que el instructor indique `csv`. Verifica en la salida:
 - que `extraction_id` sea nuevo para esta ejecución;
 - que el formato y `chunk_size` sean los esperados.
 
-> **Captura sugerida 2:** salida de la celda de configuración, ocultando host,
-> usuario, contraseña y cualquier identificador privado.
 
 ## 2. Extraer las cuatro tablas de MySQL
 
@@ -76,8 +133,7 @@ Comprueba que aparezcan cuatro mensajes de filas y rutas, uno por tabla. Si la
 celda falla en `com.mysql.cj.jdbc.Driver`, vuelve a la preparación del cluster:
 falta el JAR JDBC o el cluster necesita reiniciarse.
 
-> **Captura sugerida 3:** salida de la extracción con los cuatro conteos y la
-> ruta del manifest; difumina host, bucket o namespace si no son públicos.
+![manifest listo]({{ '/assets/img/ingest_manifest.png' | relative_url }})
 
 ## 3. Validar el extracto antes de cargarlo
 
@@ -112,8 +168,7 @@ Observa que la fuente `subscriptions` se conserva con el nombre histórico
 `acquired_products_bronze`. Las columnas de fecha/hora se crean como
 `TIMESTAMP`, que es el tipo compatible con Spark SQL y Delta.
 
-> **Captura sugerida 4:** catálogo expandido en AIDP con los esquemas Bronze,
-> Silver y Gold, y las cuatro tablas Bronze visibles.
+![Catalog listo]({{ '/assets/img/catalogs_ready.png' | relative_url }})
 
 ## 5. Cargar los extractos en Bronze
 
@@ -153,9 +208,6 @@ Ejecuta la celda **Create Silver Layer Delta tables**. Esta operación crea:
 
 Todavía no contienen la lógica de calidad; sólo definen el contrato de datos
 que se llenará en los siguientes tres pasos.
-
-> **Captura sugerida 5:** esquema de `billing_payments_silver` que muestre
-> `updated_billing_status`, como evidencia del contrato Silver.
 
 ## 7. Refinar pagos en Silver
 
