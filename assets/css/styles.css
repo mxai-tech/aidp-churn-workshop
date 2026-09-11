@@ -150,7 +150,7 @@ h1 { max-width: 720px; margin: 0; font-size: clamp(2.35rem, 5vw, 4.25rem); line-
 .content p { margin: 0 0 18px; }
 .content img {
   display: block;
-  width: min(100%, 700px);
+  max-width: min(100%, 700px);
   height: auto;
   margin: 24px 0;
 }

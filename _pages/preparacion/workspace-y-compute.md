@@ -21,7 +21,26 @@ vignette: Workspace, compute y conectores
 El workspace delimita tus notebooks, archivos y recursos de trabajo. Trabaja
 siempre dentro del compartimiento indicado por el instructor.
 
-## 2. Crear un compute cluster
+## 2. Crear un Catálogo Externo en AIDP Workbench
+
+Desde la pagina de inicio de AIDP Workbench, selecciona el tab Master catalog en el menú izquierdo. Puede notar que el default catalog ya está presente. Si expandes el default catalog y el folder oci_ai_models verás los LLMs que están disponibles para usar en AIDP Workbench.
+
+![image]({{ '/assets/img/llms-available-default.png' | relative_url }})
+
+Crea un catálogo seleccionando Create Catalog
+
+![image]({{ '/assets/img/create_catalog.png' | relative_url }})
+
+Dale un nombre dentro Catalog Name, **gold_ready_external_26ai** y selecciona External Catalog para el tipo de catálogo.
+
+Selecciona **Oracle Autonomous AI Lakehouse** como source type. Sube el archivo wallet que descargaste cuando creaste tu base de datos Autonomous 26ai. Para el **Servicio** selecciona el nivel low, teclea ADMIN para el Username, y teclea la contraseña que le diste. Otros valores puedes dejarlos como están.Selecciona Test Connection y Crear.
+
+![image]({{ '/assets/img/catalog_config.png' | relative_url }})
+
+Cuando la creación del catálogo haya sido completada, expande la base de datos para ver las tablas disponibles. Usarás esta conexión para guardar tus datos en capa gold a la base de datos.
+
+
+## 3. Crear un compute cluster
 
 1. En el workspace, abre **Compute** y selecciona **Create cluster**.
 2. Elige la configuración de Spark y tamaño indicados por el instructor. Asegurate de que la la opción Autoscale esté inactiva.
@@ -32,7 +51,7 @@ El driver coordina el notebook y los ejecutores realizan las tareas Spark. Para
 este laboratorio utiliza un clúster compartido o el tamaño mínimo acordado para
 evitar consumo innecesario.
 
-## 3. Instalar librerías del clúster
+## 4. Instalar librerías del clúster
 
 Con el clúster activo, abre la pestaña **Library** y usa **Install Library**.
 Las bibliotecas se instalan a nivel de clúster, por lo que estarán disponibles
@@ -63,6 +82,7 @@ vuelva a **Active**.
 ## Lista de verificación
 
 - Workspace disponible.
+- Catálogo externo conectado a Autonomous 26ai.
 - Cluster activo y notebook adjunto.
 - JAR JDBC visible en **Library**.
 - `requirements.txt` instalado y cluster reiniciado.
