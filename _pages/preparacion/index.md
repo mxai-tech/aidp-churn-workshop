@@ -15,5 +15,5 @@ el entorno de AIDP que consumirá los datos.
 ### Temas de la sección
 
 1. [Conocer los datos sintéticos]({{ '/preparacion/datos-sinteticos.html' | relative_url }})
-2. [Creación de una base de datos y red]({{'/preparacion/base-de-datos-y-vcn' | relative_url}})
+2. [Creación de una base de datos]({{'/preparacion/base-de-datos.html' | relative_url }})
 3. [Crear workspace, cluster y librerías]({{ '/preparacion/workspace-y-compute.html' | relative_url }})

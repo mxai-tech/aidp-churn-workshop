@@ -188,7 +188,7 @@ spark.table("churn_analysis.gold.churn_predictions_gold") \
 
 ## 8. Comunicar el riesgo y el impacto económico
 
-Por último, ejecuta la celda **Clientes de mayor riesgo e impacto financiero
+Ejecuta la celda **Clientes de mayor riesgo e impacto financiero
 mensual estimado**. La celda conserva el score más reciente de cada cliente,
 lo une al precio contratado y calcula:
 
@@ -203,6 +203,17 @@ no representa una proyección financiera definitiva ni sustituye una decisión
 comercial.
 
 ![customer risk]({{ '/assets/img/customer_risk.png' | relative_url }})
+
+## 9. Guardar los datos de la capa gold en Autonomous 26ai
+
+Casi para terminar los datos se preparan para el consumo por OAC estandarizando los nombres
+de las columnas y por último guarda los datos y resultados obtenidos en la capa gold en una 
+base de datos, lo que nos puede permitir compartir esos datos con otros componentes
+y sistemas, por ejemplo OCA (Oracle Cloud Analytics). Autonomous 26ai nos permite 
+que los datos puedan ser consultados vía SQL o MCP.
+
+Ejecuta la celda **Estandarizar nombres de columanas** y después ejecuta la celda **Guardar** 
+**resultados en Autonomous 26ai**
 
 ## Cierre del laboratorio
 
